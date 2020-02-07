@@ -1,0 +1,244 @@
+@startuml
+
+title __PRACTICEJAVA's Class Diagram__\n
+
+  namespace mobilefactory {
+    class mobilefactory.IOSMobileFactory {
+    }
+  }
+  
+
+  namespace mobilefactory {
+    abstract class mobilefactory.MobilePhone {
+    }
+  }
+  
+
+  namespace mobilefactory {
+    interface mobilefactory.MobilePhoneFactory {
+    }
+  }
+  
+
+  namespace mobilefactory {
+    interface mobilefactory.ModelInformation {
+    }
+  }
+  
+
+  namespace mobilefactory {
+    class mobilefactory.SamsungMobileFactory {
+    }
+  }
+  
+
+  namespace mobilefactory {
+    class mobilefactory.VietnamFactory {
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      class mobilefactory.mobileComponent.Antenna {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      class mobilefactory.mobileComponent.Battery {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      class mobilefactory.mobileComponent.Camera {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      class mobilefactory.mobileComponent.IOSModelDetailInformation {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      abstract class mobilefactory.mobileComponent.ModelDetailInformation {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      abstract class mobilefactory.mobileComponent.OSSoftware {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace mobileComponent {
+      class mobilefactory.mobileComponent.SamsungModelDetailInformation {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace outSourcing {
+      class mobilefactory.outSourcing.AppStore {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace outSourcing {
+      class mobilefactory.outSourcing.KakaoSoftware {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace outSourcing {
+      class mobilefactory.outSourcing.MemoSoftware {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace outSourcing {
+      class mobilefactory.outSourcing.MessageSoftware {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace outSourcing {
+      class mobilefactory.outSourcing.PlayStore {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace outSourcing {
+      class mobilefactory.outSourcing.TelephoneCallSoftware {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.ios {
+      class mobilefactory.production.ios.IOSAntenna {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.ios {
+      class mobilefactory.production.ios.IOSBattery {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.ios {
+      class mobilefactory.production.ios.IOSCamera {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.ios {
+      class mobilefactory.production.ios.IOSIPhone11 {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.samsung {
+      class mobilefactory.production.samsung.SamsungAntenna {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.samsung {
+      class mobilefactory.production.samsung.SamsungBattery {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.samsung {
+      class mobilefactory.production.samsung.SamsungCamera {
+      }
+    }
+  }
+  
+
+  namespace mobilefactory {
+    namespace production.samsung {
+      class mobilefactory.production.samsung.SamsungNote8 {
+      }
+    }
+  }
+  
+
+  mobilefactory.IOSMobileFactory .up.|> mobilefactory.MobilePhoneFactory
+  mobilefactory.MobilePhone o-- mobilefactory.mobileComponent.Antenna : antenna
+  mobilefactory.MobilePhone o-- mobilefactory.mobileComponent.Battery : battery
+  mobilefactory.MobilePhone o-- mobilefactory.mobileComponent.Camera : camera
+  mobilefactory.MobilePhone o-- mobilefactory.mobileComponent.ModelDetailInformation : modelInformation
+  mobilefactory.SamsungMobileFactory .up.|> mobilefactory.MobilePhoneFactory
+  mobilefactory.mobileComponent.IOSModelDetailInformation -up-|> mobilefactory.mobileComponent.ModelDetailInformation
+  mobilefactory.mobileComponent.IOSModelDetailInformation o-- mobilefactory.ModelInformation.IOSModel : iosModel
+  mobilefactory.mobileComponent.SamsungModelDetailInformation -up-|> mobilefactory.mobileComponent.ModelDetailInformation
+  mobilefactory.mobileComponent.SamsungModelDetailInformation o-- mobilefactory.ModelInformation.SamsungModel : samsungModel
+  mobilefactory.outSourcing.AppStore -up-|> mobilefactory.mobileComponent.OSSoftware
+  mobilefactory.outSourcing.KakaoSoftware -up-|> mobilefactory.mobileComponent.OSSoftware
+  mobilefactory.outSourcing.MemoSoftware -up-|> mobilefactory.mobileComponent.OSSoftware
+  mobilefactory.outSourcing.MessageSoftware -up-|> mobilefactory.mobileComponent.OSSoftware
+  mobilefactory.outSourcing.PlayStore -up-|> mobilefactory.mobileComponent.OSSoftware
+  mobilefactory.outSourcing.TelephoneCallSoftware -up-|> mobilefactory.mobileComponent.OSSoftware
+  mobilefactory.production.ios.IOSAntenna -up-|> mobilefactory.mobileComponent.Antenna
+  mobilefactory.production.ios.IOSBattery -up-|> mobilefactory.mobileComponent.Battery
+  mobilefactory.production.ios.IOSCamera -up-|> mobilefactory.mobileComponent.Camera
+  mobilefactory.production.ios.IOSIPhone11 -up-|> mobilefactory.MobilePhone
+  mobilefactory.production.ios.IOSIPhone11 o-- mobilefactory.MobilePhoneFactory : mobilePhoneFactory
+  mobilefactory.production.samsung.SamsungAntenna -up-|> mobilefactory.mobileComponent.Antenna
+  mobilefactory.production.samsung.SamsungBattery -up-|> mobilefactory.mobileComponent.Battery
+  mobilefactory.production.samsung.SamsungCamera -up-|> mobilefactory.mobileComponent.Camera
+  mobilefactory.production.samsung.SamsungNote8 -up-|> mobilefactory.MobilePhone
+  mobilefactory.production.samsung.SamsungNote8 o-- mobilefactory.MobilePhoneFactory : mobilePhoneFactory
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
